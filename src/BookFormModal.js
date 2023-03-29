@@ -47,7 +47,7 @@ class BookFormModal extends React.Component {
                 <Form.Control type="text" placeholder="Description" />
               </Form.Group>
               <Form.Group className="mb-3" controlId="status">
-                <Form.Check type="checkbox" label="Check me out" />
+                <Form.Check type="checkbox" label="Is Available" />
               </Form.Group>
               <Button variant="primary" type="submit">
                 Submit

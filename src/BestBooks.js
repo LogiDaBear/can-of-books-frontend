@@ -97,16 +97,24 @@ class BestBooks extends React.Component {
         </Button>
 
         <Accordion defaultActiveKey="0">
-              <Accordion.Header>Delete Book</Accordion.Header>
-            <Accordion.Item item="Delete"><Button onClick={() => this.deleteBook(book.id)}>Delete</Button></Accordion.Item>
-              <Accordion.Body>
-              </Accordion.Body>
-              <Accordion.Header>Create Book</Accordion.Header>
-              <Accordion.Item item="Create"><Button onClick={() => this.postBook}>Create</Button></Accordion.Item>
-              <Accordion.Body>
-                <Button variant="success">Success</Button>{' '}
-              </Accordion.Body>
-          </Accordion>
+          <Accordion.Item>
+            <Accordion.Header>
+              Delete Books
+            </Accordion.Header>
+
+            {this.state.books.map((book, idx) => {
+              return (
+                <Accordion.Body key={idx}>
+                  <Button
+                    onClick={() => this.deleteBook(book.title)}>Delete
+                  </Button>
+                  Book Title: {book.title}  
+                </Accordion.Body>
+              )
+            })}
+
+          </Accordion.Item>
+        </Accordion>
 
         {this.state.show && (
           <BookFormModal
