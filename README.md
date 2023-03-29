@@ -21,29 +21,37 @@ Clone this repo to your own account with the green "Use this template" button. T
   
   - Slack, Remo
   
-  4. How often will you take breaks?
+  3. How often will you take breaks?
+  
   - When needed
-  5. What is your plan if you start to fall behind?
+  
+  4. What is your plan if you start to fall behind?
+  
   - Use a TA and/or Audrey to help us press through
 
 ## Cooperative
 Make a list of each parson’s strengths.
-### Ryan's Strengths
-- Adaptability to changes, Open-minded to new ideas
-### Logan's Strengths
-- Attention to detail, Communication
+  ### Ryan's Strengths
+  - Adaptability to changes, Open-minded to new ideas
+  ### Logan's Strengths
+  - Attention to detail, Communication
 -------------------------------------------------------------------------------
-5. How can you best utilize these strengths in the development of your application?
-- We communicate and come up with a plan for each day before starting and if new ideas or thoughts on how to go about something is presented we try it
-6. In what areas do you each want to develop greater strength?
-- Organization for Logan and for Ryan- hands down.
-7. Knowing that every person in your team needs to understand the code, how do you plan to approach the day-to-day development?
-- We talk about it before we start and show eachother our lines of code and discuss them as we go.
+  5. How can you best utilize these strengths in the development of your application?
+  
+  - We communicate and come up with a plan for each day before starting and if new ideas or thoughts on how to go about something is presented we try it
+  
+  6. In what areas do you each want to develop greater strength?
+  
+  - Organization for Logan and for Ryan- hands down.
+  
+  7. Knowing that every person in your team needs to understand the code, how do you plan to approach the day-to-day development?
+  
+  - We talk about it before we start and show eachother our lines of code and discuss them as we go.
 
 ## Conflict Resolution
-8. What will your team do if one person is pulling all the weight while the other person is not contributing?
-- Talk about it and come up with a plan
-9. What will your team do if one person is taking over the project and not letting the other member contribute?
-- Talk about it and come up with a plan
-10. How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
-- We explain to eachother with what we are implementing line by line or what we are working on at the time. Using VS LiveShare is a game changer.
+  8. What will your team do if one person is pulling all the weight while the other person is not contributing?
+  - Talk about it and come up with a plan
+  9. What will your team do if one person is taking over the project and not letting the other member contribute?
+  - Talk about it and come up with a plan
+  10. How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
+  - We explain to eachother with what we are implementing line by line or what we are working on at the time. Using VS LiveShare is a game changer.
