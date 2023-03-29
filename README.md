@@ -13,14 +13,18 @@ Clone this repo to your own account with the green "Use this template" button. T
 # Partner Agreement
 
 ## Logistical
-1. What hours will you be available to communicate?
-- We are both available 2 hours after lunch and work until we are done- if not complete Ryan in Hawaii continues and Logan in Ohio continues in the morning.
-2. What platform will you use to communicate (ie. Slack, phone …)?
-- Slack, Remo
-3. How often will you take breaks?
-- When needed
-4. What is your plan if you start to fall behind?
-- Use a TA and/or Audrey to help us press through
+  1. What hours will you be available to communicate?
+
+  - We are both available 2 hours after lunch and work until we are done- if not complete Ryan in Hawaii continues and Logan in Ohio continues in the morning.
+
+  2. What platform will you use to communicate (ie. Slack, phone …)?
+  
+  - Slack, Remo
+  
+  4. How often will you take breaks?
+  - When needed
+  5. What is your plan if you start to fall behind?
+  - Use a TA and/or Audrey to help us press through
 
 ## Cooperative
 Make a list of each parson’s strengths.
