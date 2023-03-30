@@ -4,6 +4,8 @@ import Carousel from 'react-bootstrap/Carousel';
 import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
 import BookFormModal from './BookFormModal';
+import UpdateFormModal from './UpdateFormModal';
+
 
 
 class BestBooks extends React.Component {
@@ -11,7 +13,9 @@ class BestBooks extends React.Component {
     super(props);
     this.state = {
       books: [],
-      show: false
+      show: false,
+      updateShow: false,
+      selectedBook: {}
     }
   }
 
@@ -19,6 +23,7 @@ class BestBooks extends React.Component {
   getBooks = async () => {
     try {
       let url = `${process.env.REACT_APP_SERVER}/books`;
+      
 
       let bookData = await axios.get(url);
 
@@ -29,39 +34,65 @@ class BestBooks extends React.Component {
     } catch (error) {
       console.error(error.response);
     }
-  }
+  };
 
 
   //Delete Book
   deleteBook = async (id) => {
     try {
       let url = `${process.env.REACT_APP_SERVER}/books/${id}`;
-
+      console.log(url);
+      console.log(id);
       await axios.delete(url);
 
-      let updatedBooks = this.state.books.filter(book => book !== id);
+      let updateDeleteBooks = this.state.books.filter(book => book._id !== id);
 
       this.setState({
-        books: updatedBooks
+        books: updateDeleteBooks
       })
 
     } catch (error) {
       console.log(error.response)
     }
-  }
+  };
 
-  //Add cat to database with 2 handlers
+  //Update Books
+  updateBook = async (bookDataToUpdate) => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/books/${bookDataToUpdate._id}`;
+    
+    
+      let updateBook = await axios.put(url, bookDataToUpdate);
+
+      console.log(updateBook);
+
+      let updatedBooksArray = this.state.books.map(existingBook => {
+        return existingBook._id === bookDataToUpdate._id ? updateBook.data
+          : existingBook
+      })
+
+      this.setState({
+        books: updatedBooksArray 
+      })
+
+    } catch (error) {
+      console.log(error.message)
+    }
+  };
 
 
-  //handler - posts to db
-
+  // Handler for Post
   postBook = async (bookObj) => {
     try {
       console.log('postBook called');
 
-      let url = `${process.env.React_APP_SERVER}/books`;
+      let url = `${process.env.REACT_APP_SERVER}/books`;
+      console.log(url);
+      console.log(bookObj);
 
       let createdBook = await axios.post(url, bookObj);
+
+      console.log(createdBook);
 
       this.setState({
         books: [...this.state.books, createdBook.data]
@@ -71,18 +102,24 @@ class BestBooks extends React.Component {
       console.log(error.message)
     }
 
-  }
+  };
 
   componentDidMount() {
     this.getBooks();
-  }
+  };
 
 
   closeModal = () => {
     this.setState({
       show: false
     })
-  }
+  };
+
+  closeUpdateModal = () => {
+    this.setState({
+      updateShow: false
+    })
+  };
 
   render() {
 
@@ -99,16 +136,19 @@ class BestBooks extends React.Component {
         <Accordion defaultActiveKey="0">
           <Accordion.Item>
             <Accordion.Header>
-              Delete Books
+              Update or Delete Books
             </Accordion.Header>
 
             {this.state.books.map((book, idx) => {
               return (
                 <Accordion.Body key={idx}>
                   <Button
-                    onClick={() => this.deleteBook(book.title)}>Delete
+                    onClick={() => this.deleteBook(book._id)}>Delete
                   </Button>
-                  Book Title: {book.title}  
+                  <Button
+                    onClick={() => { this.setState({ updateShow: true, selectedBook: book}) }}>Update
+                  </Button>
+                  Book Title: {book.title}
                 </Accordion.Body>
               )
             })}
@@ -124,6 +164,14 @@ class BestBooks extends React.Component {
           />
         )}
 
+        {this.state.updateShow && (
+          <UpdateFormModal
+            updateShow={this.state.updateShow}
+            handleUpdateClose={this.closeUpdateModal}
+            updateBook={this.updateBook}
+            book={this.state.selectedBook}
+          />
+        )}
 
 
 
@@ -134,7 +182,7 @@ class BestBooks extends React.Component {
               <Carousel.Item key={idx}>
                 <img
                   className="d-block w-100"
-                  src='https://via.placeholder.com/100'
+                  src='https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
                   alt="book"
                 />
                 <Carousel.Caption>
@@ -146,11 +194,11 @@ class BestBooks extends React.Component {
             ))}
           </Carousel>
         ) : (
-          <h3>No Books Found :(</h3>
+          <h3>No Books Found</h3>
         )}
       </>
     )
   }
-}
+};
 
 export default BestBooks;

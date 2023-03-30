@@ -1,47 +1,47 @@
 import React from 'react';
 import { Modal, Form, Button } from 'react-bootstrap';
-//import Modal from 'react-bootstrap/Modal';
-//import Form from 'react-bootstrap/Form';
 
 
-class BookFormModal extends React.Component {
+
+class UpdateFormModal extends React.Component {
   
 
-  handleBookSubmit = (event) => {
+  handleUpdateSubmit = (event) => {
     event.preventDefault();
-    let bookObj = {
+    let bookObjToUpdate = {
 
       title: event.target.title.value,
       description: event.target.description.value,
-      status: event.target.status.checked
+      status: event.target.status.checked,
+      _id: this.props.book._id,
+      __v: this.props.book.__v
     }
 
-    this.props.postBook(bookObj);
-    this.props.handleClose();
+    this.props.updateBook(bookObjToUpdate);
+    this.props.handleUpdateClose();
   }
   
   render() {
+    console.log(this.props);
     return (
   
       <>
-        <Modal show={this.props.show} onHide={this.props.handleClose}>
+        <Modal show={this.props.updateShow} onHide={this.props.handleUpdateClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Add Book</Modal.Title>
+            <Modal.Title>Update Book</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form onSubmit={this.handleBookSubmit}>
+            <Form onSubmit={this.handleUpdateSubmit}>
               <Form.Group className="mb-3" controlId="title">
                 <Form.Label>Book Title</Form.Label>
-                <Form.Control type="text" placeholder="Title" />
-                <Form.Text className="text-muted">
-                </Form.Text>
+                <Form.Control defaultValue={this.props.book.title} type="text" placeholder="Title" />
               </Form.Group>
               <Form.Group className="mb-3" controlId="description">
                 <Form.Label>Description</Form.Label>
-                <Form.Control type="text" placeholder="Description" />
+                <Form.Control defaultValue={this.props.book.description}type="text" placeholder="Description" />
               </Form.Group>
               <Form.Group className="mb-3" controlId="status">
-                <Form.Check type="checkbox" label="Is Available" />
+                <Form.Check defaultChecked={this.props.book.status} type="checkbox" label="Is Available" />
               </Form.Group>
               <Button variant="primary" type="submit">
                 Submit
@@ -49,7 +49,7 @@ class BookFormModal extends React.Component {
             </Form>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={this.props.handleClose}>
+            <Button variant="secondary" onClick={this.props.handleUpdateClose}>
               Close
             </Button>
           </Modal.Footer>
@@ -62,4 +62,4 @@ class BookFormModal extends React.Component {
 }
 
 
-export default BookFormModal;
+export default UpdateFormModal;
