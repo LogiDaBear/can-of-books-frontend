@@ -9,7 +9,7 @@ Books are life-changing. They have the power to enlighten, educate, entertain, h
 ## Use this template
 
 Clone this repo to your own account with the green "Use this template" button. Then, add any collaborators. Now you are ready to start adding features! Deploy your site to let the world know which books have had the greatest impact on you, and what's recommended. Enjoy!
-
+-------------------------------------------------------------------------------
 # Partner Agreement
 
 ## Logistical
@@ -55,7 +55,7 @@ Make a list of each parson’s strengths.
   - Talk about it and come up with a plan
   10. How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
   - We explain to eachother with what we are implementing line by line or what we are working on at the time. Using VS LiveShare is a game changer.
-
+-------------------------------------------------------------------------------
 # Can of Books
 
 **Author**: Ryan A. and Logan R.
@@ -75,3 +75,13 @@ Make a list of each parson’s strengths.
 
 ## Credit and Collaborations
   Audrey and TA's!
+-------------------------------------------------------------------------------
+Name of feature: _____update_________
+
+Estimate of time needed to complete: __2hr___
+
+Start time: __5pm___
+
+Finish time: __8:30pm___
+
+Actual time needed to complete: __3hr__
