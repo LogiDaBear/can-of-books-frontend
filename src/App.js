@@ -1,4 +1,7 @@
 import React from 'react';
+import Login from './Login';
+import Logout from './Logout';
+import Profile from './Profile';
 import Header from './Header';
 import Footer from './Footer';
 import BestBooks from './BestBooks';
@@ -19,6 +22,9 @@ class App extends React.Component {
       <>
         <Router>
           <Header />
+          <Login/>
+          <Profile />
+          <Logout/>
           <Routes>
             <Route 
               exact path="/about"
